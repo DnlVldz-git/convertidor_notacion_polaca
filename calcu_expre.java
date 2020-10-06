@@ -33,6 +33,8 @@ public class calcu_expre {
                             colita.insertar_1_c((char) ascii);
                         }
                         System.out.println("\n");
+                        colita.impr_c();
+                        System.out.print(" = ");
                         colita.pasar_polaca_inv_c();//se pasará a polaca la cola actual
                         colita.hacer_null();    //se reiniciará la cola en la que se insertarán 
                         colita.recorrer_c();    //se recorre la cola donde está el resultado
@@ -62,6 +64,13 @@ class lista{
             nuevo.sig = inicio;
             inicio.prev=nuevo;
             inicio = nuevo;
+        }
+    }
+    public void impr_c(){//se imprime la cola antes de resolver
+        nodo_c aux =inicio_1 ;
+        while(aux != null){
+        System.out.print(aux.dato);
+        aux= aux.sig;
         }
     }
     public boolean checar_vacia_p(){ //función que checa si la pila está vacia
@@ -207,3 +216,4 @@ class nodo_c{//la clase nodo para realizar una lista doblemente ligada o una pil
     nodo_c sig;
     nodo_c prev;
 }
+
